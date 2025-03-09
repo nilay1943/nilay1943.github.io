@@ -4,6 +4,23 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    container: {
+      center: true,
+      screens: {
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1536px',
+      },
+      padding: {
+        DEFAULT: '1rem',
+        sm: '2rem',
+        lg: '4rem',
+        xl: '5rem',
+        '2xl': '6rem',
+      },
+    },
     screens: {
       'sm': '640px',
       'md': '768px',
@@ -12,6 +29,9 @@ module.exports = {
       '2xl': '1536px',
     },
     extend: {
+      maxWidth: {
+        '7xl': '80rem',
+      },
       fontSize: {
         'base': ['16px', '24px'],
         'lg': ['18px', '28px'],
@@ -23,17 +43,20 @@ module.exports = {
         '6xl': ['60px', '1'],
         '7xl': ['72px', '1'],
       },
-      container: {
-        center: true,
-        padding: {
-          DEFAULT: '16px',
-          sm: '32px',
-          lg: '64px',
-          xl: '80px',
-          '2xl': '96px',
-        },
+      spacing: {
+        '18': '4.5rem',
+        '22': '5.5rem',
+        '26': '6.5rem',
+        '30': '7.5rem',
       },
     },
   },
   plugins: [],
+  // Ensure CSS purging doesn't remove container classes
+  safelist: [
+    'container',
+    'mx-auto',
+    'px-4',
+    'max-w-7xl'
+  ]
 } 

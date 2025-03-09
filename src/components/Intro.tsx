@@ -48,7 +48,7 @@ export default function Intro() {
 
   return (
     <section 
-      className="min-h-screen flex items-center justify-center bg-white relative transition-all duration-500"
+      className="min-h-screen flex items-center justify-center bg-white relative transition-all duration-500 w-full"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
