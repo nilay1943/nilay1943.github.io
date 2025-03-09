@@ -7,7 +7,8 @@ const inter = Inter({ subsets: ["latin"] });
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  viewportFit: 'cover',
+  maximumScale: 1,
+  userScalable: false
 };
 
 export const metadata: Metadata = {
@@ -22,9 +23,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );
