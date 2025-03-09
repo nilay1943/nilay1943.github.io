@@ -11,8 +11,20 @@ const nextConfig = {
     ],
   },
   trailingSlash: true,
-  basePath: process.env.NODE_ENV === 'production' ? '' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '' : ''
+  basePath: '',
+  assetPrefix: '',
+  // Ensure proper static generation
+  reactStrictMode: true,
+  swcMinify: true,
+  // Disable size optimization to maintain consistent sizing
+  compiler: {
+    removeConsole: false,
+  },
+  experimental: {
+    optimizeCss: false,
+  },
+  // Add this to handle GitHub Pages properly
+  distDir: 'out',
 };
 
 export default nextConfig;
