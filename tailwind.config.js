@@ -4,23 +4,6 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    container: {
-      center: true,
-      screens: {
-        sm: '640px',
-        md: '768px',
-        lg: '1024px',
-        xl: '1280px',
-        '2xl': '1536px',
-      },
-      padding: {
-        DEFAULT: '1rem',
-        sm: '2rem',
-        lg: '4rem',
-        xl: '5rem',
-        '2xl': '6rem',
-      },
-    },
     screens: {
       'sm': '640px',
       'md': '768px',
@@ -49,14 +32,17 @@ module.exports = {
         '26': '6.5rem',
         '30': '7.5rem',
       },
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: '16px',
+          sm: '32px',
+          lg: '64px',
+          xl: '80px',
+          '2xl': '96px',
+        },
+      },
     },
   },
   plugins: [],
-  // Ensure CSS purging doesn't remove container classes
-  safelist: [
-    'container',
-    'mx-auto',
-    'px-4',
-    'max-w-7xl'
-  ]
 } 

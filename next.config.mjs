@@ -15,7 +15,13 @@ const nextConfig = {
   assetPrefix: '',
   // Ensure proper static generation
   reactStrictMode: true,
-  swcMinify: true,
+  // Disable size optimization
+  swcMinify: false,
+  // Ensure proper CSS processing
+  webpack: (config) => {
+    config.optimization.minimize = false;
+    return config;
+  },
   // Disable size optimization to maintain consistent sizing
   compiler: {
     removeConsole: false,

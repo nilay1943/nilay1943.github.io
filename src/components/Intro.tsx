@@ -48,7 +48,7 @@ export default function Intro() {
 
   return (
     <section 
-      className="min-h-screen flex items-center justify-center bg-white relative transition-all duration-500 w-full"
+      className="min-h-screen w-screen overflow-x-hidden bg-white relative transition-all duration-500"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -64,49 +64,51 @@ export default function Intro() {
       <div className={`absolute inset-0 bg-[linear-gradient(45deg,transparent_0%,rgba(0,0,0,0.04)_50%,transparent_100%)] opacity-100 transition-opacity duration-500`}></div>
       
       {/* Content */}
-      <div className="container mx-auto px-4 py-16 relative z-10">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 max-w-7xl mx-auto">
-          <div className="flex-1 text-center md:text-left max-w-2xl">
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 text-gray-900 transition-all duration-500 hover:scale-105">
-              Hi, I'm <span className="text-sky-600 hover:text-sky-700 transition-colors duration-300">Nilay</span>
-            </h1>
-            <div className="h-[2.5rem] sm:h-[3rem] lg:h-[3.5rem] mb-8">
-              <p className="text-lg sm:text-2xl lg:text-3xl text-gray-600">
-                <span className="inline-block min-w-[20ch]">
-                  {currentText}
-                  <span className="animate-pulse">|</span>
-                </span>
-              </p>
+      <div className="min-h-screen w-full flex items-center justify-center">
+        <div className="w-[90%] max-w-[1280px] py-16 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="text-center md:text-left">
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 text-gray-900 transition-all duration-500 hover:scale-105">
+                Hi, I'm <span className="text-sky-600 hover:text-sky-700 transition-colors duration-300">Nilay</span>
+              </h1>
+              <div className="h-[2.5rem] sm:h-[3rem] lg:h-[3.5rem] mb-8">
+                <p className="text-lg sm:text-2xl lg:text-3xl text-gray-600">
+                  <span className="inline-block min-w-[20ch]">
+                    {currentText}
+                    <span className="animate-pulse">|</span>
+                  </span>
+                </p>
+              </div>
+              <div className="flex gap-4 justify-center md:justify-start">
+                <a
+                  href="#projects"
+                  className="bg-sky-500 text-white hover:bg-sky-600 px-6 py-3 text-base sm:text-lg lg:text-xl rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                >
+                  View Projects
+                </a>
+                <a
+                  href="#contact"
+                  className="border border-sky-500 text-sky-500 hover:bg-sky-50 px-6 py-3 text-base sm:text-lg lg:text-xl rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                >
+                  Contact Me
+                </a>
+              </div>
             </div>
-            <div className="flex gap-4 justify-center md:justify-start">
-              <a
-                href="#projects"
-                className="bg-sky-500 text-white hover:bg-sky-600 px-6 py-3 text-base sm:text-lg lg:text-xl rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg"
-              >
-                View Projects
-              </a>
-              <a
-                href="#contact"
-                className="border border-sky-500 text-sky-500 hover:bg-sky-50 px-6 py-3 text-base sm:text-lg lg:text-xl rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg"
-              >
-                Contact Me
-              </a>
-            </div>
-          </div>
-          <div className="flex-1 flex justify-center">
-            <div className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-[28rem] lg:h-[28rem] transition-all duration-500 hover:scale-105">
-              <div className={`absolute inset-0 bg-sky-100 rounded-full opacity-20 animate-pulse transition-opacity duration-500 ${isHovered ? 'opacity-30' : ''}`}></div>
-              <div className="relative w-full h-full rounded-full overflow-hidden">
-                <Image
-                  src="/images/profile.jpg"
-                  alt="Nilay's profile picture"
-                  fill
-                  className="object-cover object-center"
-                  priority
-                  sizes="(max-width: 640px) 12rem, (max-width: 768px) 16rem, 28rem"
-                  loading="eager"
-                  quality={100}
-                />
+            <div className="flex justify-center">
+              <div className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-[28rem] lg:h-[28rem] transition-all duration-500 hover:scale-105">
+                <div className={`absolute inset-0 bg-sky-100 rounded-full opacity-20 animate-pulse transition-opacity duration-500 ${isHovered ? 'opacity-30' : ''}`}></div>
+                <div className="relative w-full h-full rounded-full overflow-hidden">
+                  <Image
+                    src="/images/profile.jpg"
+                    alt="Nilay's profile picture"
+                    fill
+                    className="object-cover object-center"
+                    priority
+                    sizes="(max-width: 640px) 12rem, (max-width: 768px) 16rem, 28rem"
+                    loading="eager"
+                    quality={100}
+                  />
+                </div>
               </div>
             </div>
           </div>
